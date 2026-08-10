@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S&amp;P Chat — кейс Ярослава</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page case-page">
+    <header class="site-header site-header--case">
+      <a class="case-back-link" href="index.html#projects">Вернуться назад</a>
+
+      <nav class="nav" aria-label="Навигация">
+        <a href="https://disk.yandex.ru/i/dono9yY0aqtzBA" target="_blank" rel="noreferrer">CV</a>
+        <a href="https://t.me/flayleone" target="_blank" rel="noreferrer">Telegram</a>
+        <a href="mailto:design.flayle@mail.ru" aria-label="Написать письмо на design.flayle@mail.ru">Почта</a>
+      </nav>
+    </header>
+
+    <article class="case-detail" aria-labelledby="sp-case-title">
+      <div class="case-section case-section--intro">
+        <section class="case-detail__hero">
+          <video
+            class="case-detail__video"
+            src="assets/video/case-3-hover.mp4"
+            poster="assets/figma/sp-case/hero.png"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            aria-label="Анимация мобильного AI-приложения S&P Chat"
+          ></video>
+        </section>
+
+        <section class="case-text-stack" aria-label="Описание проекта S&P Chat">
+          <div class="case-row">
+            <p class="case-row__label">Контекст</p>
+            <div class="case-row__content">
+              <h1 id="sp-case-title">S&amp;P Chat — AI-приложение для налоговых и юридических консультаций</h1>
+              <p>Команда S&amp;P — немецкого объединения Schippke &amp; Partners — пришла с идеей mobile-first AI-приложения для налоговых и юридических консультаций на немецком и английском языках. Продукт планировался как самостоятельный сервис с будущей интеграцией в Schippke OS.</p>
+              <p>Сроки были сжатыми: за 1,5 недели нужно было пройти путь от первого обсуждения до прототипа, тестирования, доработок и <span class="review-highlight">закрытого релиза в App Store</span>.</p>
+            </div>
+          </div>
+
+          <div class="case-row">
+            <p class="case-row__label">Задача</p>
+            <div class="case-row__content">
+              <p>Собрать интерактивный прототип, используя AI как инструмент ускорения — от макета к рабочему коду, — при этом самому отвечая за сценарии, логику и визуальные решения.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-row">
+          <p class="case-row__label">Дискавери</p>
+          <div class="case-row__content">
+            <p>Сначала я разобрал, как устроены AI-чаты и агенты у лидеров рынка: Perplexity, ChatGPT, Linear, Notion, Arc и Superhuman. Смотрел не на визуальный шум, а на паттерны, которые помогают пользователю быстро сформулировать запрос, доверять ответу и не теряться в истории диалога.</p>
+            <p>Из исследования собрал короткую UX-заметку: какие сценарии нужны в первом прототипе, как должен вести себя чат, где пригодится deep search, как показать голосовой ввод и как не перегрузить mobile-first интерфейс.</p>
+            <p>Юридические и налоговые консультации — зона риска, поэтому я закладывал в интерфейс защиту от слепого доверия: ответ подаётся как документ со ссылками, а не как вердикт, и сценарий подталкивает уточнять. За корректность отвечает AI-модель, содержательная ответственность — на стороне заказчика.</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="case-section">
+        <section class="case-image-strip case-image-strip--sp-concept" aria-label="Генерация и первые концепты S&P Chat">
+          <figure class="case-figure case-figure--sp-concept">
+            <img src="assets/figma/sp-case/concept-01.png" alt="Первый визуальный концепт S&P Chat" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="case-figure case-figure--sp-concept">
+            <img src="assets/figma/sp-case/concept-02.png" alt="Альтернативный визуальный концепт S&P Chat" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="case-figure case-figure--sp-concept-wide">
+            <img src="assets/figma/sp-case/concept-03.png" alt="Широкая доска с вариантами концепта S&P Chat" loading="lazy" decoding="async" />
+          </figure>
+        </section>
+
+        <section class="case-row">
+          <p class="case-row__label">Генерация и концепт</p>
+          <div class="case-row__content">
+            <p>После дискавери я разделил работу на два параллельных потока: рабочую основу и визуальную проработку. Я задавал Cursor промпты с чёткими UX-ограничениями — то есть AI собирал каркас по моим правилам, — а сам параллельно проектировал визуальный язык, тёмную тему, типографику и подачу ответа как структурированного документа.</p>
+            <p>Так я мог проверять свои решения сразу в интерактиве, а не зависать в статичных макетах. Для такого сжатого проекта это было критично: дизайн и прототип двигались одновременно, но направление всегда задавал я, а AI ускорял сборку.</p>
+          </div>
+        </section>
+
+        <section class="case-row">
+          <p class="case-row__label">Результаты концептов</p>
+          <div class="case-row__content">
+            <p>На первой итерации я показал заказчику несколько направлений. Лучше всего сработал вариант, где строгая чёрно-белая основа соединялась с выразительными акцентами и mobile-first навигацией.</p>
+            <p>Этот концепт стал базой для дальнейшей проработки экранов, пользовательских сценариев и сборки прототипа под тест.</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="case-section">
+        <section class="case-image-strip case-image-strip--sp-flow" aria-label="Флоу и доработка экранов S&P Chat">
+          <figure class="case-figure case-figure--sp-flow" style="--flow-ratio: 2651 / 1993;">
+            <img src="assets/figma/sp-case/flow-main-chat.png" alt="Основной экран и чат S&P Chat" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="case-figure case-figure--sp-flow" style="--flow-ratio: 1645 / 1993;">
+            <img src="assets/figma/sp-case/flow-deep-search.png" alt="Экран чата и deep search" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="case-figure case-figure--sp-flow" style="--flow-ratio: 1150 / 1993;">
+            <img src="assets/figma/sp-case/flow-deep-search-alt.png" alt="Альтернативный экран deep search" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="case-figure case-figure--sp-flow" style="--flow-ratio: 3216 / 1993;">
+            <img src="assets/figma/sp-case/flow-history-profile.png" alt="Переходы к истории и профилю" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="case-figure case-figure--sp-flow" style="--flow-ratio: 3851 / 1993;">
+            <img src="assets/figma/sp-case/flow-voice.png" alt="Голосовой сценарий в S&P Chat" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="case-figure case-figure--sp-flow" style="--flow-ratio: 4096 / 1805;">
+            <img src="assets/figma/sp-case/flow-onboarding.png" alt="Онбординг S&P Chat" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="case-figure case-figure--sp-flow" style="--flow-ratio: 2651 / 1993;">
+            <img src="assets/figma/sp-case/flow-discover.png" alt="Переход с главного экрана к discovery-сценарию" loading="lazy" decoding="async" />
+          </figure>
+        </section>
+
+        <section class="case-row">
+          <p class="case-row__label">Доработка концепта</p>
+          <div class="case-row__content">
+            <p>Вместе с заказчиком мы собрали документ требований и прошлись по концепту, чтобы найти UX-недочёты до сборки. После этого я доработал флоу: главный экран, чат, deep search, историю, профиль, голосовой сценарий и онбординг.</p>
+            <p>К середине работы был готов цельный набор экранов, на котором можно было собирать прототип и проверять продукт на живых сценариях.</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="case-section">
+        <section class="case-media-wide case-media-wide--sp-development" aria-label="Разработка прототипа S&P Chat">
+          <img src="assets/figma/sp-case/development.png" alt="Визуальный блок разработки прототипа S&P Chat" loading="lazy" decoding="async" />
+        </section>
+
+        <section class="case-row">
+          <p class="case-row__label">Разработка</p>
+          <div class="case-row__content">
+            <p>Когда макеты и флоу стали плотными, я перешёл к сборке прототипа. Использовал Codex с доступом к Figma через MCP, чтобы код опирался прямо на мои макеты, а не на пересказ интерфейса словами.</p>
+            <p>Я задавал структуру, промпты и ограничения, проверял каждый результат в браузере, ловил расхождения с дизайном и правил их вручную. AI ускорял путь от макета до кода — но что и как должно работать, решал я. Довёл прототип до состояния, которое можно показать пользователям и передать команде.</p>
+            <p>Полторы недели легли так: день на дискавери, два-три на концепт и визуал, один на требования, два на флоу, два на сборку прототипа — и релиз.</p>
+          </div>
+        </section>
+
+        <section class="case-row">
+          <p class="case-row__label">Результат</p>
+          <div class="case-row__content">
+            <p>За 1,5 недели мы прошли путь от первого звонка до закрытого релиза в App Store. Я собрал рабочий mobile-first прототип AI-приложения, который подтвердил направление продукта и открылся первым пользователям по инвайтам. AI ускорил путь от макета к коду, но продуктовые и дизайнерские решения — ключевые сценарии, UX-паттерны чата и deep search, визуальный язык — оставались за мной. Команда получила репозиторий и понятную основу для следующего этапа и продолжила разработку на его базе.</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="case-more" aria-labelledby="case-more-title">
+        <h2 id="case-more-title">Другие проекты</h2>
+
+        <div class="case-more__grid">
+          <article class="project-card">
+            <a class="media-link" href="nfp.html" aria-label="Открыть проект National Factoring Platform">
+              <img src="assets/figma/nfp.png" alt="Факторинговая платформа на ноутбуке" loading="lazy" decoding="async" />
+            </a>
+            <h3>UX-переработка MVP факторинговой платформы National Factoring Platform</h3>
+            <a class="text-link" href="nfp.html">Смотреть проект</a>
+          </article>
+
+          <article class="project-card">
+            <a class="media-link" href="https://www.figma.com/design/8olUGXQoT2VAwyUsh5hDDM/%D0%A2%D1%83%D1%80-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%82%D0%B8%D0%BC?node-id=0-1&t=7gcyGFzKvaqIwpCJ-1" target="_blank" rel="noreferrer" aria-label="Открыть фигму ТурКарта">
+              <img src="assets/figma/turcard.png" alt="Мобильный интерфейс ТурКарта" loading="lazy" decoding="async" />
+            </a>
+            <h3>Концепт мобильного продукта для ТурКарты</h3>
+            <a class="text-link" href="https://www.figma.com/design/8olUGXQoT2VAwyUsh5hDDM/%D0%A2%D1%83%D1%80-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%82%D0%B8%D0%BC?node-id=0-1&t=7gcyGFzKvaqIwpCJ-1" target="_blank" rel="noreferrer">Открыть фигму</a>
+          </article>
+
+          <article class="project-card">
+            <a class="media-link" href="emcd.html" aria-label="Открыть проект EMCD">
+              <img src="assets/figma/hero-emcd.png" alt="Калькулятор доходности EMCD на ноутбуке" loading="lazy" decoding="async" />
+            </a>
+            <h3>Редизайн калькулятора доходности EMCD для покупки майнинг-контракта</h3>
+            <a class="text-link" href="emcd.html">Смотреть проект</a>
+          </article>
+
+          <article class="project-card">
+            <a class="media-link" href="https://www.figma.com/design/2gKpVwCMZ40j6hAI0BW8qh/%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D1%82-%D0%B1%D0%B0%D0%BD%D0%BA--%D0%A5%D0%BE%D1%85%D0%BB%D0%BE%D0%B2-%D0%AF%D0%92?node-id=105-17&t=0yMS1hmKythBpdQA-1" target="_blank" rel="noreferrer" aria-label="Открыть фигму сервиса беспилотного такси">
+              <img src="assets/figma/taxi.png" alt="Сервис отслеживания беспилотного такси" loading="lazy" decoding="async" />
+            </a>
+            <h3>Сервис отслеживания беспилотного такси для T-Bank</h3>
+            <a class="text-link" href="https://www.figma.com/design/2gKpVwCMZ40j6hAI0BW8qh/%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D1%82-%D0%B1%D0%B0%D0%BD%D0%BA--%D0%A5%D0%BE%D1%85%D0%BB%D0%BE%D0%B2-%D0%AF%D0%92?node-id=105-17&t=0yMS1hmKythBpdQA-1" target="_blank" rel="noreferrer">Открыть фигму</a>
+          </article>
+
+          <article class="project-card">
+            <a class="media-link" href="https://www.figma.com/design/1VLuXWwoQtCoX5d05HNwGK/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2-Stobix?node-id=2002-1115&t=e57nXk7ToE3B3E3Z-1" target="_blank" rel="noreferrer" aria-label="Открыть фигму карточки анализа сделки Stobix">
+              <img src="assets/figma/stobix-card.png" alt="Карточка анализа сделки Stobix" loading="lazy" decoding="async" />
+            </a>
+            <h3>Переработка карточки анализа сделки для Stobix</h3>
+            <a class="text-link" href="https://www.figma.com/design/1VLuXWwoQtCoX5d05HNwGK/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2-Stobix?node-id=2002-1115&t=e57nXk7ToE3B3E3Z-1" target="_blank" rel="noreferrer">Открыть фигму</a>
+          </article>
+        </div>
+      </section>
+    </article>
+
+    <footer class="footer">
+      <div>
+        <time id="local-time" datetime="">07:39</time>
+        <p>Saint Petersburg, Russia</p>
+      </div>
+
+      <div>
+        <p>Designed by flayle</p>
+        <p class="footer__tools">Made with Codex, Seedance, Kling</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
