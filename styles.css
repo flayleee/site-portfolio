@@ -1080,15 +1080,20 @@ body.is-thinking .thinking-cursor::after {
 
   .case-summary__title,
   .case-summary p,
-  .project-grid--featured > .project-card,
-  .article-grid > .article-preview,
-  .project-grid--tests > .project-card {
+  .project-grid--featured > .project-card:nth-child(n),
+  .article-grid > .article-preview:nth-child(n),
+  .project-grid--tests > .project-card:nth-child(n) {
     grid-column: auto;
   }
 
   .case-summary--hero {
     margin-top: 24px;
     gap: 16px;
+  }
+
+  .article-links {
+    flex-wrap: wrap;
+    gap: 12px 18px;
   }
 
   .project-grid--featured {
