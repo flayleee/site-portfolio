@@ -280,21 +280,21 @@ function setupRevealAnimations() {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-revealed");
         return;
       }
 
-      entry.target.classList.add("is-revealed");
-      observer.unobserve(entry.target);
+      entry.target.classList.remove("is-revealed");
     });
   }, {
-    rootMargin: "0px 0px 10% 0px",
+    rootMargin: "18% 0px 18% 0px",
     threshold: 0.01,
   });
 
   revealItems.forEach((item, index) => {
     item.classList.add("reveal-item");
-    item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
+    item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 90}ms`);
     observer.observe(item);
   });
 }
