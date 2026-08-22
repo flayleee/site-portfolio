@@ -117,14 +117,26 @@ img {
   white-space: nowrap;
 }
 
-.nav a {
+.nav a,
+.language-toggle {
   color: var(--text);
   text-decoration: none;
   transition: opacity 180ms ease;
 }
 
+.language-toggle {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
 .nav a:hover,
-.nav a:focus-visible {
+.nav a:focus-visible,
+.language-toggle:hover,
+.language-toggle:focus-visible {
   opacity: 0.55;
 }
 
