@@ -28,6 +28,7 @@ const translatableContentSelector = [
   "main figcaption",
   ".media-caption",
   "[data-language-toggle]",
+  "[data-i18n]",
 ].join(",");
 const translatableAttributeNames = ["aria-label", "alt", "title", "placeholder"];
 
@@ -48,6 +49,11 @@ const englishTranslations = new Map([
   [`Почта`, `Email`],
   [`Вернуться назад`, `Back`],
   [`Смотреть проект`, `View project`],
+  [`Проект под NDA`, `Project under NDA`],
+  [`Редизайн калькулятора доходности`, `Profitability calculator redesign`],
+  [`для покупки майнинг-контракта`, `for purchasing a mining contract`],
+  [`Название компании скрыто по NDA`, `Company name withheld under NDA`],
+  [`Размытое превью конфиденциального проекта`, `Blurred preview of a confidential project`],
   [`Открыть фигму`, `Open Figma`],
   [`Другие проекты`, `Other Projects`],
   [`Контекст`, `Context`],
@@ -75,7 +81,7 @@ const englishTranslations = new Map([
   [`Анимировано с помощью Kling`, `Animated with Kling`],
   [`Анимировано с помощью Seedance`, `Animated with Seedance`],
   [`Редизайн калькулятора доходности EMCD для покупки майнинг-контракта`, `Redesigning EMCD’s profitability calculator for buying a mining contract`],
-  [`Пересобрал калькулятор под критерии успешного принятия, которые задала компания: сделал сценарий покупки понятнее, добавил состояния и мобильную версию, сохранив визуальный язык EMCD.`, `I rebuilt the calculator around the success criteria set by the company: made the purchase flow clearer, added states and a mobile version, while preserving EMCD’s visual language.`],
+  [`Пересобрал калькулятор под критерии успешного принятия, которые задала компания: сделал сценарий покупки понятнее, добавил состояния и мобильную версию, сохранив визуальный язык продукта.`, `I rebuilt the calculator around the success criteria set by the company: made the purchase flow clearer, added states and a mobile version, while preserving the product’s visual language.`],
   [`UX-переработка MVP факторинговой платформы National Factoring Platform`, `UX redesign of the MVP for the National Factoring Platform`],
   [`S&amp;P Chat: AI-приложение для юридических и налоговых консультаций за 1,5 недели`, `S&amp;P Chat: an AI app for legal and tax consultations in 1.5 weeks`],
   [`Вне клиентских проектов веду свой AI-стартап — прокачиваю продуктовое мышление: гипотезы, приоритизация, метрики, работа с ограничениями.`, `Outside client work, I’m building my own AI startup and sharpening product thinking: hypotheses, prioritization, metrics, and working with constraints.`],

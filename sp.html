@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <link rel="stylesheet" href="styles.css?v=i18n-language-switch" />
+  <link rel="stylesheet" href="styles.css?v=nda-project-card" />
 </head>
 <body>
   <main class="page case-page">
@@ -176,12 +176,14 @@
             <a class="text-link" href="https://www.figma.com/design/8olUGXQoT2VAwyUsh5hDDM/%D0%A2%D1%83%D1%80-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%82%D0%B8%D0%BC?node-id=0-1&t=7gcyGFzKvaqIwpCJ-1" target="_blank" rel="noreferrer">Открыть фигму</a>
           </article>
 
-          <article class="project-card">
-            <a class="media-link" href="emcd.html" aria-label="Открыть проект EMCD">
-              <img src="assets/figma/hero-emcd.png" alt="Калькулятор доходности EMCD на ноутбуке" loading="lazy" decoding="async" />
-            </a>
-            <h3>Редизайн калькулятора доходности EMCD для покупки майнинг-контракта</h3>
-            <a class="text-link" href="emcd.html">Смотреть проект</a>
+          <article class="project-card project-card--nda">
+            <div class="media-link media-link--nda" role="img" aria-label="Размытое превью конфиденциального проекта">
+              <img src="assets/figma/hero-emcd.png" alt="" loading="lazy" decoding="async" />
+              <span class="nda-particle-field" aria-hidden="true"></span>
+              <span class="media-caption nda-media-label" data-i18n>Проект под NDA</span>
+            </div>
+            <h3><span data-i18n>Редизайн калькулятора доходности</span> <span class="nda-redaction" tabindex="0" aria-label="Название компании скрыто по NDA"></span> <span data-i18n>для покупки майнинг-контракта</span></h3>
+            <span class="text-link nda-status" data-i18n>Проект под NDA</span>
           </article>
 
           <article class="project-card">
@@ -216,6 +218,6 @@
     </footer>
   </main>
 
-  <script src="script.js?v=i18n-language-switch"></script>
+  <script src="script.js?v=nda-project-card"></script>
 </body>
 </html>

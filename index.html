@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <link rel="stylesheet" href="styles.css?v=i18n-language-switch" />
+  <link rel="stylesheet" href="styles.css?v=nda-project-card" />
 </head>
 <body>
   <main class="page">
@@ -30,36 +30,28 @@
     </header>
 
     <section class="hero-project" id="projects" aria-labelledby="hero-project-title">
-      <a class="media-link media-link--wide" href="emcd.html" aria-label="Открыть проект EMCD">
+      <div class="media-link media-link--wide media-link--nda" role="img" aria-label="Размытое превью конфиденциального проекта">
         <img
           src="assets/figma/hero-emcd.png"
           srcset="assets/figma/hero-emcd.png 1672w, assets/figma/hero-emcd@2x.png 3680w"
           sizes="(min-width: 1920px) 1840px, (max-width: 780px) calc(100vw - 32px), calc(100vw - 80px)"
-          alt="Калькулятор доходности EMCD на ноутбуке"
+          alt=""
           loading="eager"
           fetchpriority="high"
           decoding="async"
         />
-        <video
-          class="hover-video"
-          src="assets/video/hero-hover.mp4"
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          aria-hidden="true"
-        ></video>
-        <span class="media-caption">Анимировано с помощью Kling</span>
-      </a>
+        <span class="nda-particle-field" aria-hidden="true"></span>
+        <span class="media-caption nda-media-label" data-i18n>Проект под NDA</span>
+      </div>
 
       <div class="case-summary case-summary--hero">
         <div class="case-summary__title case-summary__title--emcd">
-          <h1 id="hero-project-title">Редизайн калькулятора доходности EMCD для покупки майнинг-контракта</h1>
-          <a class="text-link" href="emcd.html" data-page="emcd">Смотреть проект</a>
+          <h1 id="hero-project-title"><span data-i18n>Редизайн калькулятора доходности</span> <span class="nda-redaction" tabindex="0" aria-label="Название компании скрыто по NDA"></span> <span data-i18n>для покупки майнинг-контракта</span></h1>
+          <span class="text-link nda-status" data-i18n>Проект под NDA</span>
         </div>
 
         <p class="case-summary__description">
-          Пересобрал калькулятор под критерии успешного принятия, которые задала компания: сделал сценарий покупки понятнее, добавил состояния и мобильную версию, сохранив визуальный язык EMCD.
+          Пересобрал калькулятор под критерии успешного принятия, которые задала компания: сделал сценарий покупки понятнее, добавил состояния и мобильную версию, сохранив визуальный язык продукта.
         </p>
       </div>
     </section>
@@ -245,6 +237,6 @@
     </footer>
   </main>
 
-  <script src="script.js?v=i18n-language-switch"></script>
+  <script src="script.js?v=nda-project-card"></script>
 </body>
 </html>
