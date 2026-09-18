@@ -389,6 +389,19 @@ img {
   transform: translateY(-1px);
 }
 
+.inline-text-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: opacity 180ms ease;
+}
+
+.inline-text-link:hover,
+.inline-text-link:focus-visible {
+  opacity: 0.58;
+}
+
 .review-highlight {
   border-radius: 0;
   background: none;
