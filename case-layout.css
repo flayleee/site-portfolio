@@ -91,3 +91,9 @@
 .case-minimap b:nth-child(4n + 1) {width:20px;background:#a8a8a8;}
 @media(max-width:1100px) {.case-minimap {display:none;}}
 @media(prefers-reduced-motion:reduce) {.case-minimap b {transition:none;}}
+
+.case-contacts {display:flex;gap:8px;flex-shrink:0;width:100%;margin-top:auto;}
+.case-contact-button {display:flex;align-items:center;justify-content:center;flex:1;min-width:0;height:54px;border-radius:12px;background:#242424;color:#fff;text-decoration:none;font-size:14px;line-height:18px;font-weight:600;transition:background .15s;}
+.case-contact-button:hover {background:#3a3a3a;}
+.case-contact-button img {display:block;}
+@media(max-width:720px) {.case-contacts {order:3;max-width:301px;}}
