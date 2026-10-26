@@ -173,3 +173,8 @@ body {font-optical-sizing:auto;}
 .juno-hover-video {object-fit:contain;background:#060606;}
 
 #work-31032 .work-preview, #work-31032 .preview-scene {background:#060606!important;}
+
+.profile-contacts {display:flex;gap:8px;width:100%;margin-top:auto;flex-shrink:0;}
+.profile-contact {display:flex;align-items:center;justify-content:center;flex:1;min-width:0;height:54px;border-radius:12px;background:#242424;color:#fff;font-size:14px;line-height:18px;font-weight:600;transition:background .15s;}
+.profile-contact:hover {background:#3a3a3a;}
+@media(max-width:900px) {.profile-contacts {order:2;max-width:301px;}}
