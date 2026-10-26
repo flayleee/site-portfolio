@@ -9,7 +9,7 @@ const resize = new ResizeObserver(entries => {
 let active = null;
 function stopPreview(card) {
   if (!card) return;
-  card._label.classList.remove('is-visible');
+  card._label?.classList.remove('is-visible');
   card.classList.remove('is-playing');
   card.style.removeProperty('--tilt-x');
   card.style.removeProperty('--tilt-y');
@@ -25,6 +25,7 @@ function positionLabel(card, x, y) {
 }
 for (const card of previews) {
   if (card.dataset.width) resize.observe(card);
+  if (card.hasAttribute('data-static-preview')) continue;
   if (card.dataset.bubble) {
     const bubble = document.createElement('span');
     bubble.className = 'cursor-label';
