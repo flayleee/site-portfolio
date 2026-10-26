@@ -1559,3 +1559,43 @@ body.is-thinking .thinking-cursor::after {
     animation-duration: 1ms !important;
   }
 }
+
+/* Homepage preview actions; copy can be set independently on each card. */
+.portfolio-home .project-hover-label {
+  position: absolute;
+  left: var(--label-x, 16px);
+  top: var(--label-y, 16px);
+  z-index: 4;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  font: 500 13px/18px Arial, sans-serif;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(12px) scale(.96);
+  transition: opacity 180ms ease, transform 260ms cubic-bezier(.22, 1, .36, 1);
+}
+.portfolio-home .media-link:is(:hover, :focus-visible) .project-hover-label {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.portfolio-home a.media-link .media-caption { display: none; }
+.portfolio-home a.media-link:focus-visible { outline: 3px solid #6d99ff; outline-offset: 4px; }
+@media (hover: none), (pointer: coarse) {
+  .portfolio-home .project-hover-label {
+    left: 16px;
+    top: auto;
+    bottom: 16px;
+    padding: 7px 12px;
+    font-size: 13px;
+    line-height: 18px;
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-home .media-link .hover-video { display: none; }
+  .portfolio-home .media-link:hover img { transform: none; }
+}

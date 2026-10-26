@@ -1,6 +1,6 @@
 const timeNode = document.querySelector("#local-time");
 const hoverVideos = document.querySelectorAll(".media-link video");
-const thinkingTargets = document.querySelectorAll("a, button");
+const thinkingTargets = document.querySelectorAll("a:not(.portfolio-home .media-link), button");
 const beforeAfterSliders = document.querySelectorAll("[data-before-after]");
 const zoomableImages = Array.from(document.querySelectorAll(".case-detail img"))
   .filter((image) => !image.closest("a") && !image.closest("[data-no-lightbox]") && !image.classList.contains("no-lightbox"));
@@ -341,6 +341,7 @@ function applyLanguage(language, shouldPersist = false) {
 }
 
 function setupLanguageSwitcher() {
+  if (document.body.classList.contains("case-format") && !languageToggle) return;
   applyLanguage(getInitialLanguage());
 
   if (!languageToggle) {
@@ -441,7 +442,7 @@ function setupHoverVideos() {
 }
 
 function setupThinkingCursor() {
-  if (!thinkingCursor) {
+  if (!thinkingCursor || document.body.classList.contains("case-format")) {
     return;
   }
 
@@ -583,6 +584,7 @@ function setupNoDanglingShortWords() {
 }
 
 function setupRevealAnimations() {
+  if (document.body.classList.contains("case-format")) return;
   const revealSelectors = [
     ".site-header > *",
     ".hero-project > *",
@@ -711,3 +713,27 @@ setupRevealAnimations();
 setupImageLightbox();
 updateLocalTime();
 setInterval(updateLocalTime, 30_000);
+
+// Position each preview label next to the pointer, keeping it inside the card.
+document.querySelectorAll(".portfolio-home a.media-link").forEach((card) => {
+  const label = card.querySelector(".project-hover-label");
+  if (!label) return;
+  const followPointer = (event) => {
+    if (event.pointerType === "touch") return;
+    const bounds = card.getBoundingClientRect();
+    const x = event.clientX - bounds.left;
+    const y = event.clientY - bounds.top;
+    const width = label.offsetWidth;
+    const height = label.offsetHeight;
+    const left = x + width + 24 > bounds.width ? x - width - 12 : x + 12;
+    const top = y + height + 24 > bounds.height ? y - height - 12 : y + 16;
+    card.style.setProperty("--label-x", `${Math.max(8, Math.min(left, bounds.width - width - 8))}px`);
+    card.style.setProperty("--label-y", `${Math.max(8, Math.min(top, bounds.height - height - 8))}px`);
+  };
+  card.addEventListener("pointerenter", followPointer);
+  card.addEventListener("pointermove", followPointer);
+  card.addEventListener("pointerleave", () => {
+    card.style.removeProperty("--label-x");
+    card.style.removeProperty("--label-y");
+  });
+});

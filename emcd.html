@@ -4,55 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EMCD — кейс Ярослава</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
+
+
+
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="stylesheet" href="styles.css?v=i18n-language-switch" />
-</head>
-<body>
+  <link rel="stylesheet" href="case-layout.css?v=reading-9" />
+<link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="page-loading.css"></head>
+<body class="case-format"><div class="page-loader" hidden role="status" aria-label="Загрузка страницы"><div class="page-loader__shape"><img src="assets/favicon-512.png" width="88" height="88" alt=""></div></div><script src="page-loading.js"></script>
+<aside class="case-sidebar" aria-label="О кейсе и навигация">
+<a class="case-home" href="index.html" aria-label="Все проекты"><span>Ярослав Хохлов</span></a>
+<div class="case-summary-short"><p>Кратко про кейс:</p><p>Пересобрал ввод параметров, расчёт доходности и мобильный сценарий покупки контракта.</p></div>
+<a class="case-return" href="index.html">← Все проекты</a>
+<details class="case-contents" open><summary>Содержание кейса</summary><nav aria-label="Разделы кейса"><a href="#section-1" data-section="section-1">Контекст</a><a href="#section-2" data-section="section-2">Задача</a><a href="#section-3" data-section="section-3">Дискавери</a><a href="#section-4" data-section="section-4">Low-fidelity</a><a href="#section-5" data-section="section-5">High-fidelity</a><a href="#section-6" data-section="section-6">Результат</a></nav></details>
+<a class="case-contact" href="https://t.me/flayleone" target="_blank" rel="noreferrer">Связаться в TG</a>
+</aside>
   <main class="page case-page">
-    <header class="site-header site-header--case">
-      <a class="case-back-link" href="index.html#projects">Вернуться назад</a>
 
-      <nav class="nav" aria-label="Навигация">
-        <button class="language-toggle" type="button" data-language-toggle aria-label="Переключить язык на английский">English</button>
-        <a href="https://disk.yandex.ru/i/p9AXZRnwgouGiw" target="_blank" rel="noreferrer">CV</a>
-        <a href="https://t.me/flayleone" target="_blank" rel="noreferrer">Telegram</a>
-        <a href="mailto:design.flayle@mail.ru" aria-label="Написать письмо на design.flayle@mail.ru">Почта</a>
-      </nav>
-    </header>
 
     <article class="case-detail" aria-labelledby="emcd-case-title">
+<header class="case-heading"><h1 id="emcd-case-title">EMCD: калькулятор доходности майнинг-контракта</h1><dl class="case-meta"><div><dt>Роль</dt><dd>Продуктовый дизайнер</dd><dt>Формат</dt><dd>Редизайн UX/UI</dd></div><div><dt>Заказчик</dt><dd>EMCD</dd></div></dl></header>
       <div class="case-section case-section--intro">
         <section class="case-detail__hero">
           <video
             class="case-detail__video"
             src="assets/video/hero-hover.mp4"
             poster="assets/figma/emcd-case/hero.png"
-            autoplay
             muted
             loop
             playsinline
-            preload="auto"
+            preload="metadata"
             aria-label="Анимация калькулятора доходности EMCD"
           ></video>
         </section>
 
         <section class="case-text-stack" aria-label="Описание проекта EMCD">
-        <div class="case-row">
-          <p class="case-row__label">Контекст</p>
+        <div class="case-row" id="section-1" tabindex="-1">
+<div class="case-section-heading"><p class="case-eyebrow">Контекст</p><h2>С чего началась работа</h2></div>
           <div class="case-row__content">
-            <h1 id="emcd-case-title">Калькулятор доходности для покупки майнинг-контракта в EMCD</h1>
+
             <p>EMCD — крипто-экосистема для майнинга, инвестиций и хранения. Калькулятор доходности на hashport.emcd.io перестал справляться со своей задачей по трём причинам: лендинг устарел и визуально выпадал из новых продуктов EMCD, что подрывало доверие к расчётам; формула доходности была непрозрачной, и пользователь не понимал, из чего складывается результат; на этом фоне снижалась конверсия в покупку контракта. Нужно было переосмыслить калькулятор и превратить его в понятный self-checkout: пользователь задаёт параметры контракта, сразу видит прогноз доходности и понимает, какие действия влияют на итоговую сумму.</p>
           </div>
         </div>
 
-        <div class="case-row">
-          <p class="case-row__label">Задача</p>
+        <div class="case-row" id="section-2" tabindex="-1">
+<div class="case-section-heading"><p class="case-eyebrow">Задача</p><h2>Что нужно было изменить</h2></div>
           <p class="case-row__content">Обновить UX и UI калькулятора: пересобрать ввод данных, состояния, расчёт доходности и мобильный сценарий так, чтобы решение легло в визуальный язык EMCD даже без доступа к полноценной дизайн-системе.</p>
         </div>
         </section>
@@ -76,8 +75,8 @@
         </div>
         </section>
 
-        <section class="case-row">
-        <p class="case-row__label">Дискавери</p>
+        <section class="case-row" id="section-3" tabindex="-1">
+<div class="case-section-heading"><p class="case-eyebrow">Дискавери</p><h2>Сценарии и ограничения</h2></div>
         <div class="case-row__content">
           <p>Я начал с разбора сценария покупки контракта и изучил, как похожие калькуляторы устроены в финтехе и криптопродуктах. Отдельно отметил точки потери доверия: непрозрачную формулу расчёта, скрытые ограничения, резкую смену валюты, неочевидный CTA и слабый мобильный сценарий.</p>
           <p>После этого собрал референсы интерфейсов, где калькулятор работает не как декоративный блок, а как главный инструмент принятия решения.</p>
@@ -95,8 +94,8 @@
         </figure>
         </section>
 
-        <section class="case-row">
-        <p class="case-row__label">Low-fidelity</p>
+        <section class="case-row" id="section-4" tabindex="-1">
+<div class="case-section-heading"><p class="case-eyebrow">Low-fidelity</p><h2>Проверка механики</h2></div>
         <div class="case-row__content">
           <p>В low-fidelity я проверил основную механику: как пользователь выбирает мощность, срок и валюту, где видит пересчёт доходности и в какой момент переходит к покупке. На этом же этапе заложил пустые, ошибочные и загрузочные состояния, чтобы сценарий не разваливался на краевых случаях.</p>
           <p>Мобильную версию проектировал параллельно, потому что для такого сценария нельзя просто сжать десктоп: калькулятор должен оставаться читаемым и управляемым одним большим пальцем.</p>
@@ -110,13 +109,13 @@
         </section>
 
         <div class="case-text-stack">
-          <section class="case-row">
-            <p class="case-row__label">High-fidelity</p>
+          <section class="case-row" id="section-5" tabindex="-1">
+<div class="case-section-heading"><p class="case-eyebrow">High-fidelity</p><h2>Визуальный язык и состояния</h2></div>
             <p class="case-row__content">После согласования структуры я собрал high-fidelity-версию на базе уже запущенных интерфейсов EMCD: тёмная среда, зелёный акцент доходности, фиолетовый CTA и компактные контролы. Так решение сохранило ощущение продукта без попытки заново изобретать дизайн-систему.</p>
           </section>
 
-          <section class="case-row">
-            <p class="case-row__label">Результат</p>
+          <section class="case-row" id="section-6" tabindex="-1">
+<div class="case-section-heading"><p class="case-eyebrow">Результат</p><h2>К чему пришли</h2></div>
             <div class="case-row__content">
               <p>Получился цельный self-checkout для покупки виртуального майнинг-контракта: пользователь задаёт мощность, срок и валюту, сразу видит прогноз доходности до оплаты и понимает, как каждый параметр влияет на итог. Расчёт стал прозрачным — исчезла главная точка потери доверия. Макет покрывает ключевые состояния (empty, loading, error, disabled), отдельный мобильный поток и <span class="review-highlight">готов к передаче в разработку</span>.</p>
               <p>Продовых данных по конверсии нет, поэтому фиксирую критерии успеха: меньше шагов до результата, понятная формула доходности, закрытые краевые состояния и рабочий сценарий с телефона.</p>
@@ -133,67 +132,11 @@
           <img src="assets/figma/emcd-case/final-calculator.png" alt="Экран результата расчёта доходности EMCD" loading="lazy" decoding="async" />
         </figure>
       </section>
-
-      <section class="case-more" aria-labelledby="case-more-title">
-        <h2 id="case-more-title">Другие проекты</h2>
-
-        <div class="case-more__grid">
-          <article class="project-card">
-            <a class="media-link" href="https://www.figma.com/design/2gKpVwCMZ40j6hAI0BW8qh/%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D1%82-%D0%B1%D0%B0%D0%BD%D0%BA--%D0%A5%D0%BE%D1%85%D0%BB%D0%BE%D0%B2-%D0%AF%D0%92?node-id=105-17&t=0yMS1hmKythBpdQA-1" target="_blank" rel="noreferrer" aria-label="Открыть фигму сервиса беспилотного такси">
-              <img src="assets/figma/taxi.png" alt="Сервис отслеживания беспилотного такси" loading="lazy" decoding="async" />
-            </a>
-            <h3>Сервис отслеживания беспилотного такси для T-Bank</h3>
-            <a class="text-link" href="https://www.figma.com/design/2gKpVwCMZ40j6hAI0BW8qh/%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D1%82-%D0%B1%D0%B0%D0%BD%D0%BA--%D0%A5%D0%BE%D1%85%D0%BB%D0%BE%D0%B2-%D0%AF%D0%92?node-id=105-17&t=0yMS1hmKythBpdQA-1" target="_blank" rel="noreferrer">Открыть фигму</a>
-          </article>
-
-          <article class="project-card">
-            <a class="media-link" href="nfp.html" aria-label="Открыть проект National Factoring Platform">
-              <img src="assets/figma/nfp.png" alt="Факторинговая платформа на ноутбуке" loading="lazy" decoding="async" />
-            </a>
-            <h3>UX-переработка MVP факторинговой платформы National Factoring Platform</h3>
-            <a class="text-link" href="nfp.html">Смотреть проект</a>
-          </article>
-
-          <article class="project-card">
-            <a class="media-link" href="https://www.figma.com/design/1VLuXWwoQtCoX5d05HNwGK/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2-Stobix?node-id=2002-1115&t=e57nXk7ToE3B3E3Z-1" target="_blank" rel="noreferrer" aria-label="Открыть фигму карточки анализа сделки Stobix">
-              <img src="assets/figma/stobix-card.png" alt="Карточка анализа сделки Stobix" loading="lazy" decoding="async" />
-            </a>
-            <h3>Переработка карточки анализа сделки для Stobix</h3>
-            <a class="text-link" href="https://www.figma.com/design/1VLuXWwoQtCoX5d05HNwGK/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2-Stobix?node-id=2002-1115&t=e57nXk7ToE3B3E3Z-1" target="_blank" rel="noreferrer">Открыть фигму</a>
-          </article>
-
-          <article class="project-card">
-            <a class="media-link" href="sp.html" aria-label="Открыть проект S&P Chat">
-              <img src="assets/figma/ai-app.png" alt="Мобильное приложение в руке" loading="lazy" decoding="async" />
-            </a>
-            <h3>S&amp;P Chat: AI-приложение для юридических и налоговых консультаций за 1,5 недели</h3>
-            <a class="text-link" href="sp.html">Смотреть проект</a>
-          </article>
-
-          <article class="project-card">
-            <a class="media-link" href="https://www.figma.com/design/8olUGXQoT2VAwyUsh5hDDM/%D0%A2%D1%83%D1%80-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%82%D0%B8%D0%BC?node-id=0-1&t=7gcyGFzKvaqIwpCJ-1" target="_blank" rel="noreferrer" aria-label="Открыть фигму ТурКарта">
-              <img src="assets/figma/turcard.png" alt="Мобильный интерфейс ТурКарта" loading="lazy" decoding="async" />
-            </a>
-            <h3>Концепт мобильного продукта для ТурКарты</h3>
-            <a class="text-link" href="https://www.figma.com/design/8olUGXQoT2VAwyUsh5hDDM/%D0%A2%D1%83%D1%80-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%82%D0%B8%D0%BC?node-id=0-1&t=7gcyGFzKvaqIwpCJ-1" target="_blank" rel="noreferrer">Открыть фигму</a>
-          </article>
-        </div>
-      </section>
     </article>
-
-    <footer class="footer">
-      <div>
-        <time id="local-time" datetime="">07:39</time>
-        <p>Saint Petersburg, Russia</p>
-      </div>
-
-      <div>
-        <p>Designed by flayle</p>
-        <p class="footer__tools">Made with Codex, Seedance, Kling</p>
-      </div>
-    </footer>
   </main>
 
   <script src="script.js?v=i18n-language-switch"></script>
+<div class="case-minimap" aria-hidden="true"></div>
+<script src="case-layout.js?v=2"></script>
 </body>
 </html>
