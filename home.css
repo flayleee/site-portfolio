@@ -180,7 +180,6 @@ body {font-optical-sizing:auto;}
 @media(max-width:900px) {.profile-contacts {order:2;max-width:301px;}}
 
 /* Keep the Pyjam composition and complete caption visible at every width. */
-#work-31039 .scene-object {transform:none!important;}
 #work-31039 .work-caption {flex-wrap:wrap!important;row-gap:8px;}
 #work-31039 .work-caption > div {flex-wrap:wrap!important;flex-shrink:1!important;row-gap:6px!important;}
 #work-31039 .work-caption .caption-note {display:block!important;white-space:normal!important;}
