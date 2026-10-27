@@ -1,0 +1,60 @@
+<!doctype html><meta charset="utf-8"><title>Circular stream demo renderer</title>
+<style>body{margin:0;background:#222;display:grid;place-items:center}canvas{height:100vh;width:auto}</style>
+<canvas width="804" height="1744"></canvas>
+<script>
+const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d');
+const base='../figma/circular-scroll/';
+const files=['9bc9b.png','48d51.png','forest.jpg','mountain.jpg','coast.jpg','abaf2.svg','3ef4d.svg','ae4b2.svg','9cfcc.svg','fd152.svg','6c7b9.svg','51e19.svg'];
+const assets={};
+function cover(c,img,x,y,w,h){const scale=Math.max(w/img.width,h/img.height);c.drawImage(img,x+(w-img.width*scale)/2,y+(h-img.height*scale)/2,img.width*scale,img.height*scale)}
+function label(text,x,y,size=14,color='#fff',align='left'){ctx.font=`500 ${size}px Inter`;ctx.fillStyle=color;ctx.textAlign=align;ctx.fillText(text,x,y)}
+function rounded(x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r)}
+const backgrounds=[];
+const mod=(x,n)=>(x%n+n)%n;
+const ease=x=>x*x*(3-2*x);
+function render(seconds){
+ const segment=seconds/3,index=Math.floor(segment),phase=segment-index;
+ const progress=phase<.55?0:ease(Math.min(1,(phase-.55)/.35));
+ const position=index+progress;
+ ctx.setTransform(2,0,0,2,0,0);ctx.globalAlpha=1;ctx.fillStyle='#000';ctx.fillRect(0,0,402,872);
+ ctx.drawImage(backgrounds[mod(index,4)],0,0,402,663);
+ ctx.globalAlpha=progress;ctx.drawImage(backgrounds[mod(index+1,4)],0,0,402,663);ctx.globalAlpha=1;
+ ctx.drawImage(assets['abaf2.svg'],0,725,402,147.25);
+ label('9:11',58,38,17);ctx.drawImage(assets['3ef4d.svg'],288,27,19.2,12.226);ctx.drawImage(assets['ae4b2.svg'],314,27,17.142,12.328);ctx.drawImage(assets['9cfcc.svg'],338,26,27.328,13);
+ ctx.drawImage(assets['51e19.svg'],14,60,14,14);label('Name of stream',32,73);
+ label('Streaming',201,660,20,'#fff','center');label('425',20,697,14,'#ffffff80');label('List',390,697,14,'#669bff','right');
+ const thumbs=[assets['48d51.png'],assets['forest.jpg'],assets['mountain.jpg'],assets['coast.jpg']];
+ const nodes=[];
+ for(let i=Math.floor(position)-4;i<=Math.ceil(position)+4;i++){
+  const d=i-position,a=Math.abs(d);if(a>4)continue;
+  const angles=[0,30,48,64,80];const j=Math.min(3,Math.floor(a)),t=a-j;
+  const angle=(angles[j]+(angles[j+1]-angles[j])*t)*Math.sign(d)*Math.PI/180;
+  const sizes=[56,28,18,14,10],alphas=[1,.5,.4,.2,0];
+  nodes.push({i,a,x:201+168.5*Math.sin(angle),y:871.5-168.5*Math.cos(angle),size:sizes[j]+(sizes[j+1]-sizes[j])*t,alpha:alphas[j]+(alphas[j+1]-alphas[j])*t});
+ }
+ nodes.sort((a,b)=>b.a-a.a).forEach(n=>{ctx.save();ctx.globalAlpha=n.alpha;rounded(n.x-n.size/2,n.y-n.size/2,n.size,n.size,n.size/2);ctx.clip();cover(ctx,thumbs[mod(n.i,4)],n.x-n.size/2,n.y-n.size/2,n.size,n.size);ctx.restore();if(n.a<1){ctx.save();ctx.globalAlpha=1-n.a;ctx.strokeStyle='#eaaeff';ctx.lineWidth=2;ctx.shadowBlur=25;ctx.shadowColor='#eaaeff';rounded(n.x-n.size/2,n.y-n.size/2,n.size,n.size,n.size/2);ctx.stroke();ctx.restore()}});
+ ctx.drawImage(assets['fd152.svg'],111,781.96,180,154.04);ctx.drawImage(assets['6c7b9.svg'],164,814,18,18);label('Average',187,828,13);
+ ctx.fillStyle='#8c8c8c';rounded(134,859,134,5,3);ctx.fill();
+}
+window.ready=(async()=>{
+ const font=new FontFace('Inter','url(../fonts/InterDisplay-Medium.ttf)');await font.load();document.fonts.add(font);
+ await Promise.all(files.map(name=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{assets[name]=im;resolve()};im.onerror=reject;im.src=base+name})));
+ for(const file of ['9bc9b.png','forest.jpg','mountain.jpg','coast.jpg']){
+  const c=document.createElement('canvas');c.width=804;c.height=1326;const g=c.getContext('2d');
+  if(file==='9bc9b.png')g.drawImage(assets[file],0,0,804,1326);
+  else{cover(g,assets[file],0,0,804,1326);g.globalCompositeOperation='destination-in';g.drawImage(assets['9bc9b.png'],0,0,804,1326)}backgrounds.push(c);
+ }
+ render(0);return true;
+})();
+window.record=async()=>{
+ await ready;
+ const types=['video/webm;codecs=vp9','video/webm'];const type=types.find(t=>MediaRecorder.isTypeSupported(t));
+ const stream=canvas.captureStream(30),recorder=new MediaRecorder(stream,{mimeType:type,videoBitsPerSecond:5000000}),chunks=[];
+ recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+ const done=new Promise(resolve=>recorder.onstop=resolve);recorder.start();const start=performance.now();
+ await new Promise(resolve=>{function tick(now){const t=(now-start)/1000;render(Math.min(t,12));if(t<12)requestAnimationFrame(tick);else resolve()}requestAnimationFrame(tick)});
+ recorder.stop();await done;stream.getTracks().forEach(t=>t.stop());
+ const blob=new Blob(chunks,{type});const data=await new Promise(resolve=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.readAsDataURL(blob)});
+ return {type,data};
+};
+</script>
