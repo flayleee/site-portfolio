@@ -1,0 +1,19 @@
+@import url("juno.css?v=lightbox-1");
+.pyjam-draft {padding:12px 16px;border-radius:8px;background:#f4efff;color:#6844a1;font-size:14px;line-height:20px;}
+.pyjam-cover {position:relative;overflow:hidden;border-radius:12px;}
+.pyjam-cover .preview-scene {transform:scale(var(--cover-scale,1));transform-origin:top left;}
+.pyjam-fill-label {align-self:flex-start;padding:4px 8px;border-radius:6px;background:#f4efff;color:#6844a1;font-size:12px;line-height:16px;}
+.pyjam-material {color:#707070;font-size:14px;line-height:22px;}
+.pyjam-screen-strip {display:flex;justify-content:center;gap:48px;padding:48px 24px;background:#d7caff;border-radius:12px;overflow:auto;}
+.pyjam-screen-strip a {display:block;flex:0 0 170px;cursor:zoom-in;}
+.pyjam-screen-strip img {display:block;width:170px;height:350px;object-fit:contain;}
+@media(max-width:720px) {.pyjam-screen-strip {justify-content:flex-start;gap:24px;padding:32px 24px;}}
+
+
+.pyjam-boost-strip {display:flex;gap:48px;overflow-x:auto;scrollbar-width:none;}
+.pyjam-boost-strip::-webkit-scrollbar {display:none;}
+.pyjam-boost-card {position:relative;display:flex;align-items:center;justify-content:center;flex:1 0 calc((100% - 48px)/2);min-width:0;gap:60px;padding:60px 64px;margin:0;overflow:hidden;border-radius:12px;background:#e3e3e3;}
+.pyjam-boost-glow {position:absolute;left:217.51px;top:-42.99px;width:564.98px;height:564.98px;background:url('assets/figma/pyjam-case/boost-glow.svg') center/contain no-repeat;pointer-events:none;}
+.pyjam-boost-card .juno-interaction-link {position:relative;flex:0 0 173px;width:173px;height:359px;}
+.pyjam-boost-card img {display:block;width:173px;height:359px;object-fit:cover;}
+@media(max-width:1100px) {.pyjam-boost-card {flex:0 0 476px;}}
