@@ -24,7 +24,17 @@
     });
     await Promise.all(images.map(image => {
       image.loading = 'eager';
-      return image.decode();
+      return new Promise((resolve, reject) => {
+        const cleanup = () => {
+          image.removeEventListener('load', loaded);
+          image.removeEventListener('error', failed);
+        };
+        const loaded = () => { cleanup(); resolve(); };
+        const failed = () => { cleanup(); reject(new Error('Image unavailable')); };
+        image.addEventListener('load', loaded, {once: true});
+        image.addEventListener('error', failed, {once: true});
+        if (image.complete) image.naturalWidth ? loaded() : failed();
+      });
     }));
     if ([...document.querySelectorAll('link[rel="stylesheet"]')].some(link => !link.sheet)) throw new Error('Styles unavailable');
     finish();
