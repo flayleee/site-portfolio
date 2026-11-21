@@ -99,3 +99,7 @@
 .case-contact-button img[width="24"] {width:24px;height:24px;}
 .case-contact-button img[width="16"] {width:16px;height:16px;}
 @media(max-width:720px) {.case-contacts {order:3;max-width:301px;}}
+
+.case-typing-word {animation:case-type-word 120ms ease-out both;animation-delay:var(--typing-delay,0ms);}
+@keyframes case-type-word {from {opacity:0;} to {opacity:1;}}
+@media(prefers-reduced-motion:reduce),print {.case-typing-word {animation:none!important;opacity:1!important;}}
