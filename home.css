@@ -183,3 +183,5 @@ body {font-optical-sizing:auto;}
 #work-31039 .work-caption {flex-wrap:wrap!important;row-gap:8px;}
 #work-31039 .work-caption > div {flex-wrap:wrap!important;flex-shrink:1!important;row-gap:6px!important;}
 #work-31039 .work-caption .caption-note {display:block!important;white-space:normal!important;}
+
+.redesign-hover-video {object-fit:contain;background:#101016;pointer-events:none;}
